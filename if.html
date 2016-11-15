@@ -7,7 +7,26 @@
   <body>
     <h1>Tu Edad</h1>
 
-  
+    <script>
+    //var nacimiento = prompt("¿En qué año naciste?");
+    //var año = prompt("¿Qué año es?");//
+    //alert("Tu edad:" + (año - nacimiento));//
+    var edad = prompt("¿Qué edad tienes?");
+    var pais = prompt("¿De qué país eres?");
+
+    /*if( (edad > 20 && pais = "US")|| (edad > 17 )){
+      alert("Puedes entrar al antro.")
+    } else{
+      alert("Regrésate a tu casa")
+    }*/
+    if (((pais = ("mx")) && (edad > 17)) || ((pais = ("usa")) && (edad > 21)) || ((pais = ("uk")) && (edad > 16))) {
+     alert("Puedes entrar al antro");
+    }else{
+    alert("Regrésate a tu casa");
+    }
+
+
+    </script>
 
   </body>
 </html>
