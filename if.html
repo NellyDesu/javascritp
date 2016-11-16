@@ -2,28 +2,81 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
     <title>if</title>
   </head>
   <body>
     <h1>Tu Edad</h1>
+    <div class="formulario">
+    Nombre: <input type="text" id="nombre" name="" value=""><br><br>
+    Edad: <input type="text" id="edad" name="" value=""><br><br>
+    Pais:
+    <select name="pais" id="pais">
+      <option>Selecciona tu país</option>
+    <option value="mx">México</option>
+    <option value="uk">United Kingdom</option>
+    <option value="us">United States</option>
+  </select>
+    <button type="button" id="calcular" onclick="verificar();">Calcular</button><br><br>
+    <button id="nombre" onclick="activar_saludar();">Saludar</button>
+    <button onclick="encontrar_hobbits();">Encontrar Hobbits</button>
+
+    <div id="mensaje"></div>
+    <ul>
+      <li class="hobbit"> Bilbo</li>
+      <li class="hobbit"> Frodo</li>
+      <li class="hobbit"> Sam </li>
+    </ul>
 
     <script>
-    //var nacimiento = prompt("¿En qué año naciste?");
-    //var año = prompt("¿Qué año es?");//
-    //alert("Tu edad:" + (año - nacimiento));//
-    var edad = prompt("¿Qué edad tienes?");
-    var pais = prompt("¿De qué país eres?");
+    function verificar() {
+      var edad = document.getElementById("edad").value;
+      var pais = document.getElementById("pais").value;
+      //var pais = document.querySelector("#pais").value;
+      edad = parseInt(edad);
+      if(isNaN(edad) || (edad >= 130) || (edad <= 5) ){
+        alert ("Pon una edad válida");
+        return;
+      }
 
-    /*if( (edad > 20 && pais = "US")|| (edad > 17 )){
-      alert("Puedes entrar al antro.")
-    } else{
-      alert("Regrésate a tu casa")
-    }*/
+
     if (((pais = ("mx")) && (edad > 17)) || ((pais = ("usa")) && (edad > 21)) || ((pais = ("uk")) && (edad > 16))) {
-     alert("Puedes entrar al antro");
+      document.querySelector("#mensaje").innerHTML = "Felicidades eres mayor de edad";
+     //alert("Puedes entrar al antro");
     }else{
-    alert("Regrésate a tu casa");
+      document.querySelector("#mensaje").innerHTML = "Regrésate a tu casa";
+    //alert("Regrésate a tu casa");
     }
+
+   }
+
+   function saludar(nombre){
+     //var nombre = document.getElementById("nombre").value;
+     alert("Hola " + nombre);
+
+   }
+
+   function activar_saludar(){
+     var nombre = document.querySelector("#nombre").value;
+     saludar(nombre);
+
+   }
+
+   function encontrar_hobbits(){
+     hobbits = document.querySelectorAll(".hobbit");
+     console.log(hobbits);
+
+   }
+    //var edad = prompt("¿Qué edad tienes?");
+    //var pais = prompt("¿De qué país eres?");
+
+   //<input type="text" id="pais" value=""><br><br>
+
+   //*else{
+     //console.log("País desconocido" + pais);
+     //alert("Por favor ingresa tu país");
+     //return;
+   //}
 
 
     </script>
